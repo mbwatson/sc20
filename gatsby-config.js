@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `RENCI at SC20`,
+    description: `RENCI at SuperComputing 2020`,
+    author: `mbwatson`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,6 +11,23 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        commonmark: true, // CommonMark mode (default: true)
+        footnotes: true, // Footnotes mode (default: true)
+        pedantic: true, // Pedantic mode (default: true)
+        gfm: true, // GitHub Flavored Markdown mode (default: true)
+        plugins: [], // Plugins configs
       },
     },
     `gatsby-transformer-sharp`,
